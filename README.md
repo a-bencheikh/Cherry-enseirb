@@ -49,8 +49,8 @@ Then once your work done :
 - 10/03 Github Launch
 
 ## Credits
-ENSEIRB : Samuel Truffier-Blanc, Guillaume Gabriel, Wael Jarray, Leo Michaelis, Mikhael Lollo, Alaeddine Ben Cheikh Mohamed, Robin Proquot
-ENSCBP : Grégoire Melin
++ ENSEIRB : Samuel Truffier-Blanc, Guillaume Gabriel, Wael Jarray, Leo Michaelis, Mikhael Lollo, Alaeddine Ben Cheikh Mohamed, Robin Proquot
++ ENSCBP : Grégoire Melin
 
 ## License
 GNU GENERAL PUBLIC LICENSE
