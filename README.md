@@ -36,7 +36,11 @@ Then once your work done :
 2. ionic serve
 
 ### Server
-1.
+1. Logging to your Github account
+2. Fork the server files : `https://github.com/Rob2B/controller/fork`
+3. Then `git clone ` the new repository on your account
+4. Optional : Launch STS (spring eclipse) and open the controller dir
+5. Run the java app : controller\cherry_project\build\libs\cherry-rest-service-0.1.0.jar
 
 ## Contributing
 1. Fork it!
