@@ -50,7 +50,7 @@ Then once your work done :
 5. Submit a pull request :D
 
 ## History
-- 10/02 Github Launch
+- 10/03 Github Launch
 
 ## Credits
 + ENSEIRB : Samuel Truffier-Blanc, Guillaume Gabriel, Wael Jarray, Leo Michaelis, Mikhael Lollo, Alaeddine Ben Cheikh Mohamed, Robin Proquot
