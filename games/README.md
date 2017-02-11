@@ -1,22 +1,27 @@
 # Test-template
-Basic template to dave great games
+Basic template to test games
 ## Installation 
 
-Open your terminal, cd to your test-template/ :
-- `npm install`
+Open your terminal :
+1. cd to `test-template/`
+2. `npm install`
 
 
 ## Usage
-1. `ionic serve`
-2. It will automaticaly open your browser or go to `localhost:8100`
-3. Go to `test-template/src/pages/home/`
-4. Edit the `home.html` file.
-5. To stop the app juste use `CTL+C` in the terminal
 
-### File edition
-1. Just copy and paste your html code inside the `<ion-content padding></ion-content>` tag
-2. Refresh your browser page.
-3. Enjoy
+### Start the app
+1. cd to `test-template/`
+2. `ionic serve`
+3. It will automaticaly open your browser or go to `localhost:8100`
+4. To stop the app juste use `CTL+C` in the terminal
+
+### Edit the app
+1. Go to `test-template/src/pages/home/`
+2. Edit the `home.html` file.
+3. Just copy and paste your html code inside the `<ion-content padding></ion-content>` tag
+4. Refresh your browser page.
+
+# Enjoy !!
 
 ## History
 - 11/02 Template created
