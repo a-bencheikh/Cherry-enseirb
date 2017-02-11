@@ -17,10 +17,10 @@ Open your terminal, cd to your workspace repository :
 1. Open your terminal
 2. `npm install -g cordova ionic` or `sudo npm install -g ionic`
 
-### Eclipse Spring
-1. Visit https://spring.io/tools/eclipse
-2. Select the right version for your OS
-3. Download and install
+### Eclipse Spring Tool Suite
+1. Visit https://spring.io/tools
+2. Select the right version of STS for your OS
+3. Download and launch STS
 
 ## Usage
 
