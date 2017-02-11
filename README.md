@@ -1,5 +1,5 @@
 
-# ${1:Cherry Enseirb}
+# Cherry Enseirb
 Developpement d'une application mobile pour l'association PRIMA et integration avec le robot POPPY Torso.
 
 ## Installation 
@@ -15,7 +15,7 @@ Open your terminal, cd to your workspace repository :
 
 ### Ionic
 1. Open your terminal
-2. npm install -g cordova ionic or sudo npm install -g ionic
+2. `npm install -g cordova ionic` or `sudo npm install -g ionic`
 
 ### Eclipse Spring
 1. Visit https://spring.io/tools/eclipse
@@ -27,9 +27,9 @@ Open your terminal, cd to your workspace repository :
 ### Github 
 2. To get the last version : git pull 
 Then once your work done :
-2. git add .
-3. git commit -m "your message"
-4. git push
+2. `git add .`
+3. `git commit -m "your message"`
+4. `git push`
 
 ### Ionic
 1. cd app/
