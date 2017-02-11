@@ -24,13 +24,20 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+primary:    #005cb9,
+secondary:  #f8d900,
+danger:     #f53d3d,
+light:      #8dcfd9,
+dark:       #222
 );
 
+$primary:    #005cb9;
+$secondary:  #f8d900;
+$danger:     #f53d3d;
+$light:      #8dcfd9;
+$dark:       #222;
+
+.tab-button-icon {color:$secondary!important}
 
 // App iOS Variables
 // --------------------------------------------------
@@ -61,7 +68,6 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
-
 
 // Ionicons
 // --------------------------------------------------

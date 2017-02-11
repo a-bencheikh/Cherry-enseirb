@@ -21,8 +21,6 @@ Open your terminal :
 3. Just copy and paste your html code inside the `<ion-content padding></ion-content>` tag
 4. Refresh your browser page.
 
-# Enjoy !!
-
 ## History
 - 11/02 Template created
 
