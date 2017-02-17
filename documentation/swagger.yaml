@@ -1,121 +1,311 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is a simple API"
+  description: "Traduction commandes GET vers les PrimitivesWS du Robot Poppy"
   version: "1.0.0"
-  title: "Simple Inventory API"
-  contact:
-    email: "you@your-company.com"
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  title: "Controller Poppy API"
 host: "virtserver.swaggerhub.com"
-basePath: "/mlollo/Controller/1.0.0"
-tags:
-- name: "admins"
-  description: "Secured Admin-only calls"
-- name: "developers"
-  description: "Operations available to regular developers"
+basePath: "/mlollo/Request-Poppy-Primitive/1.0.0"
 schemes:
 - "https"
+produces:
+- "application/json"
 paths:
-  /inventory:
+  /chatterbot:
     get:
       tags:
-      - "developers"
-      summary: "searches inventory"
-      description: "By passing in the appropriate options, you can search for\navailable\
-        \ inventory in the system\n"
-      operationId: "searchInventory"
-      produces:
-      - "application/json"
+      - "Chatterbot"
+      summary: "Messages"
+      description: "Chatterbot\n"
       parameters:
-      - name: "searchString"
+      - name: "msg"
         in: "query"
-        description: "pass an optional search string for looking up inventory"
-        required: false
+        description: "Message to send"
+        required: true
         type: "string"
-      - name: "skip"
-        in: "query"
-        description: "number of records to skip for pagination"
-        required: false
-        type: "integer"
-        minimum: 0
-        format: "int32"
-      - name: "limit"
-        in: "query"
-        description: "maximum number of records to return"
-        required: false
-        type: "integer"
-        maximum: 50
-        minimum: 0
-        format: "int32"
+        format: "uuid"
       responses:
         200:
-          description: "search results matching criteria"
+          description: "Poppy Speak through his mic"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/InventoryItem"
-        400:
-          description: "bad input parameter"
-    post:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /history:
+    get:
       tags:
-      - "admins"
-      summary: "adds an inventory item"
-      description: "Adds an item to the system"
-      operationId: "addInventory"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
+      - "User"
+      summary: "User Activity"
+      description: "The User Activity endpoint returns data about a user's lifetime\
+        \ activity with Uber. The response will include pickup locations and times,\
+        \ dropoff locations and times, the distance of past requests, and information\
+        \ about which products were requested.<br><br>The history array in the response\
+        \ will have a maximum length based on the limit parameter. The response value\
+        \ count may exceed limit, therefore subsequent API requests may be necessary."
       parameters:
-      - in: "body"
-        name: "inventoryItem"
-        description: "Inventory item to add"
+      - name: "offset"
+        in: "query"
+        description: "Offset the list of returned results by this amount. Default\
+          \ is zero."
         required: false
-        schema:
-          $ref: "#/definitions/InventoryItem"
+        type: "integer"
+        format: "int32"
+      - name: "limit"
+        in: "query"
+        description: "Number of items to retrieve. Default is 5, maximum is 100."
+        required: false
+        type: "integer"
+        format: "int32"
       responses:
-        201:
-          description: "item created"
-        400:
-          description: "invalid input, object invalid"
-        409:
-          description: "an existing item already exists"
-definitions:
-  InventoryItem:
-    type: "object"
-    required:
-    - "id"
-    - "manufacturer"
-    - "name"
-    - "releaseDate"
-    properties:
-      id:
+        200:
+          description: "History information for the given user"
+          schema:
+            $ref: "#/definitions/Activities"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /me:
+    get:
+      tags:
+      - "User"
+      summary: "User Profile"
+      description: "The User Profile endpoint returns information about the Uber user\
+        \ that has authorized with the application."
+      parameters: []
+      responses:
+        200:
+          description: "Profile information for a user"
+          schema:
+            $ref: "#/definitions/Profile"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /multi/answer:
+    get:
+      tags:
+      - "Multiplication"
+      summary: "Multiplication"
+      description: "Multiplication answer of the child"
+      parameters:
+      - name: "param"
+        in: "query"
+        description: "Number for Mutiplication (table of 8)"
+        required: false
         type: "string"
         format: "uuid"
-        example: "d290f1ee-6c54-4b01-90e6-d701748f0851"
-      name:
+      responses:
+        200:
+          description: "Play multiplication"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /multi/false_answer:
+    get:
+      tags:
+      - "Multiplication"
+      summary: "Multiplication"
+      description: "Multiplication answer of the child"
+      parameters:
+      - name: "param"
+        in: "query"
+        description: "Number for Mutiplication (table of 8)"
+        required: false
         type: "string"
-        example: "Widget Adapter"
-      releaseDate:
+        format: "uuid"
+      responses:
+        200:
+          description: "Play multiplication"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /multi/right_answer:
+    get:
+      tags:
+      - "Multiplication"
+      summary: "Multiplication"
+      description: "Multiplication answer of the child"
+      parameters:
+      - name: "param"
+        in: "query"
+        description: "Number for Mutiplication (table of 8)"
+        required: false
         type: "string"
-        format: "int32"
-        example: "2016-08-29T09:12:33.001Z"
-      manufacturer:
-        $ref: "#/definitions/Manufacturer"
-  Manufacturer:
-    required:
-    - "name"
+        format: "uuid"
+      responses:
+        200:
+          description: "Play multiplication"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /multi/set:
+    get:
+      tags:
+      - "Multiplication"
+      summary: "Multiplication"
+      description: "Multiplication set the equation"
+      parameters:
+      - name: "param"
+        in: "query"
+        description: "Number for Mutiplication (table of 8)"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Play multiplication"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /table/scan:
+    get:
+      tags:
+      - "AWSTable"
+      summary: "Scan of tables"
+      description: "AWS Table Management\n"
+      parameters:
+      - name: "adress"
+        in: "query"
+        description: "AWS Table Management"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Scan successful"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/PriceEstimate"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  Product:
+    type: "object"
     properties:
-      name:
+      product_id:
         type: "string"
-        example: "ACME Corporation"
-      homePage:
+        description: "Unique identifier representing a specific product for a given\
+          \ latitude & longitude. For example, uberX in San Francisco will have a\
+          \ different product_id than uberX in Los Angeles."
+      description:
         type: "string"
-        format: "url"
-        example: "https://www.acme-corp.com"
-      phone:
+        description: "Description of product."
+      display_name:
         type: "string"
-        example: "408-867-5309"
+        description: "Display name of product."
+      capacity:
+        type: "string"
+        description: "Capacity of product. For example, 4 people."
+      image:
+        type: "string"
+        description: "Image URL representing the product."
+  PriceEstimate:
+    type: "object"
+    properties:
+      product_id:
+        type: "string"
+        description: "Unique identifier representing a specific product for a given\
+          \ latitude & longitude. For example, uberX in San Francisco will have a\
+          \ different product_id than uberX in Los Angeles"
+      currency_code:
+        type: "string"
+        description: "[ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) currency code."
+      display_name:
+        type: "string"
+        description: "Display name of product."
+      estimate:
+        type: "string"
+        description: "Formatted string of estimate in local currency of the start\
+          \ location. Estimate could be a range, a single number (flat rate) or \"\
+          Metered\" for TAXI."
+      low_estimate:
+        type: "number"
+        description: "Lower bound of the estimated price."
+      high_estimate:
+        type: "number"
+        description: "Upper bound of the estimated price."
+      surge_multiplier:
+        type: "number"
+        description: "Expected surge multiplier. Surge is active if surge_multiplier\
+          \ is greater than 1. Price estimate already factors in the surge multiplier."
+  Profile:
+    type: "object"
+    properties:
+      first_name:
+        type: "string"
+        description: "First name of the Uber user."
+      last_name:
+        type: "string"
+        description: "Last name of the Uber user."
+      email:
+        type: "string"
+        description: "Email address of the Uber user"
+      picture:
+        type: "string"
+        description: "Image URL of the Uber user."
+      promo_code:
+        type: "string"
+        description: "Promo code of the Uber user."
+  Activity:
+    type: "object"
+    properties:
+      uuid:
+        type: "string"
+        description: "Unique identifier for the activity"
+  Activities:
+    type: "object"
+    properties:
+      offset:
+        type: "integer"
+        format: "int32"
+        description: "Position in pagination."
+      limit:
+        type: "integer"
+        format: "int32"
+        description: "Number of items to retrieve (100 max)."
+      count:
+        type: "integer"
+        format: "int32"
+        description: "Total number of items available."
+      history:
+        type: "array"
+        items:
+          $ref: "#/definitions/Activity"
+  Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      fields:
+        type: "string"
