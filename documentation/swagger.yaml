@@ -2,10 +2,10 @@
 swagger: "2.0"
 info:
   description: "Traduction commandes GET vers les PrimitivesWS du Robot Poppy"
-  version: "1.0.0"
+  version: "1.0.1"
   title: "Controller Poppy API"
-host: "virtserver.swaggerhub.com"
-basePath: "/mlollo/Request-Poppy-Primitive/1.0.0"
+host: "localhost:8080"
+basePath: "/"
 schemes:
 - "https"
 produces:
