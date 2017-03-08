@@ -36,14 +36,31 @@
     background:url(/images/pixel-sitting.png) no-repeat;
     cursor:pointer;
     border:none;
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
 }
 
-.danse-button:hover {background:url(/images/pixel-win.png) no-repeat;}
+
+
+.danse-button:hover {box-shadow: 0 5px #666;}
 
 .danse-button:active {
   background:url(/images/pixel-win.png) no-repeat;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.learn-button {
+    background:url(/images/pixel-computer.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:150px;
+    height:150px;
+}
+
+.learn-button:active {
+  background:url(/images/pixel-win.png) no-repeat;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.learn-button:hover {box-shadow: 0 5px #666;}
