@@ -51,6 +51,8 @@ Then once your work done :
 
 ## History
 - 10/02 Github Launch
+- 10/03 Robot OP
+- 12/03 Server OP
 
 ## Credits
 + ENSEIRB : Samuel Truffier-Blanc, Guillaume Gabriel, Wael Jarray, Leo Michaelis, Mikhael Lollo, Alaeddine Ben Cheikh Mohamed, Robin Proquot
