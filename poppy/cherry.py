@@ -13,9 +13,11 @@ from pypot.robot import from_json
 class Cherry(AbstractPoppyCreature):
     @classmethod
     def setup(cls, config):
+        
         robot = from_json(config)
 
         robot._primitive_manager._filter = partial(numpy.sum, axis=0)
+        
         attach_primitives(robot)
         
         #cls._name = "cherry" # Doesn't work, i have to find why
@@ -46,9 +48,9 @@ class Cherry(AbstractPoppyCreature):
         except:
 		    print "Something goes wrong with gTTS"
 		
-        try:
-		    robot.send_ip.start(name)
-        except:
-		    print "Unable to send ip to the server"
+      #   try:
+		    # robot.send_ip.start(name)
+      #   except:
+		    # print "Unable to send ip to the server"
 
         return robot
