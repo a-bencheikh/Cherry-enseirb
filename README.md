@@ -16,9 +16,9 @@ Open your terminal, cd to your workspace repository :
 
 ### Directories
 - app : app container folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/app/README.md)
-- games : app content folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/gam/esREADME.md)
-- poppy : robot src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/pop/pyREADME.md)
-- server : server src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/ser/verREADME.md)
+- games : app content folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/games/README.md)
+- poppy : robot src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/poppy/README.md)
+- server : server src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/server/README.md)
 - documentation : any doc for the project [Here](https://github.com/Rob2B/Cherry-enseirb/tree/master/documentation)
 - WIKI -> COMING SOON !!
 
