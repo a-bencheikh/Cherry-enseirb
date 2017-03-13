@@ -1,12 +1,7 @@
-
-# Cherry Enseirb
-Developpement d'une application mobile pour l'association PRIMA et integration avec le robot POPPY Torso.
+# Application
+Mobile app written in JavaScript (NodeJS, Cordova, Angular2 & Ionic2)
 
 ## Installation 
-
-### Github (Collaborators only)
-Open your terminal, cd to your workspace repository :
-- git clone https://github.com/Rob2B/Cherry-enseirb.git
 
 ### Node.js (NPM : Node Package Manager)
 1. Visit https://nodejs.org/en/download/
@@ -25,10 +20,5 @@ Open your terminal, cd to your workspace repository :
 Done !
 3. Ctrl+C to stop
 
-### App content
-1. cd games/test-template + ( FIRST time : npm install )
-2. ionic serve
-Done !
-3. Ctrl+C to stop
 
 
