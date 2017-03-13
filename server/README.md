@@ -23,10 +23,12 @@ Done !
 - Be careful to stop the server to avoid adress already in
 Done !!
 
-### Create a runnable Jar
+### Gradle (Creating a runnable jar then running it)
 - cd to server/
 - gradle clean
 - gradle build
+- java -jar build/libs/cherry-rest-service-X.X.X.jar
+- Ctrl+C to stop
 Done 
 
 - Open your favorite web browser ( not Internet Explorer plz... )
