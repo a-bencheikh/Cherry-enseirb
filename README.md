@@ -2,7 +2,7 @@
 Developpement d'une application mobile pour l'association PRIMA et integration avec le robot POPPY Torso.
 
 # DISCLAIMER
-- Tested environnements :
+## Tested environnements :
 1. Ubuntu 16.04 (xubuntu)
 1. Ubuntu 14.04 (elementary os)
 
@@ -15,11 +15,11 @@ Open your terminal, cd to your workspace repository :
 ## Usage
 
 ### Directories
-- app : app container folder
-- games : app content folder
-- poppy : robot src folder
-- server : server src folder
-- documentation : any doc for the project
+- app : app container folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/app)
+- games : app content folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/games)
+- poppy : robot src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/poppy)
+- server : server src folder [Documentation](https://github.com/Rob2B/Cherry-enseirb/tree/master/server)
+- documentation : any doc for the project [Here](https://github.com/Rob2B/Cherry-enseirb/tree/master/documentation)
 - WIKI -> COMING SOON !!
 
 ### Github 
