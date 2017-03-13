@@ -21,7 +21,7 @@ public class Robot {
 		return ip;
 	}
 	public void setIp(String ip) {
-		this.ip = "http://" + ip + ":8080";
+		this.ip = "http://" + ip + ":8000";
 	}
 	public String getName() {
 		return name;
