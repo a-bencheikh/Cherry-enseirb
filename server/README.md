@@ -26,6 +26,7 @@ Done !
 Done !!
 
 ### Gradle (Creating a runnable jar then running it)
+
 - cd to server/
 - gradle clean
 - gradle build
@@ -34,7 +35,7 @@ Done !!
 Done 
 
 - Open your favorite web browser ( not Internet Explorer plz... )
-- type localhost:8080
+- go to localhost:8080
 
 ### End points
 

@@ -3,10 +3,10 @@ Robot poppy-torso written in python, offering a rest api & primitives to be used
 
 # Installation
 
-## [Anaconda 2](https://www.continuum.io/downloads)
+## Anaconda 2[Download](https://www.continuum.io/downloads)
 -Install anaconda for python 2.7 (Poppy python dev version)
 
-## [Poppy](https://docs.poppy-project.org/en/installation/install-poppy-softwares.html)
+## Poppy[Installation doc](https://docs.poppy-project.org/en/installation/install-poppy-softwares.html)
 -pip install poppy-torso --user -U
 
 
@@ -19,7 +19,7 @@ Robot poppy-torso written in python, offering a rest api & primitives to be used
 
 ## Any other depedencies (working on a cleaner way)
 - cd poppy/
-- ```bash
+```
 $ python
 >>> import cherry
 ```
