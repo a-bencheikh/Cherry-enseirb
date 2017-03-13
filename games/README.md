@@ -1,7 +1,9 @@
 # Test-template
 Basic template to test games
+
 ## Installation 
 
+(First time)
 Open your terminal :
 1. cd to `test-template/`
 2. `npm install`

@@ -1,10 +1,12 @@
 # Server
+Cloud controller written in java & spring using Gradle
 
 ## Installation
 
 ### Eclipse [Download page](https://www.eclipse.org/downloads/)
 - install eclipse neon
-- go to help/markeplace & install Buildship Gradle + Spring IDE
+- go to help/markeplace & install Buildship Gradle then Restart Eclipse
+- go to help/markeplace & Spring IDE then Restart Eclipse
 - go to Window/Perspective/Open Perspective/Other.../Spring then click OK
 - Open the server/ folder into eclipse
 
@@ -19,8 +21,8 @@ Done !
 ## Usage 
 
 ### Eclipse
-- right click on project run as/java application/Cherry.application(NOT tomcat)
-- Be careful to stop the server to avoid adress already in
+- right click on project run as/java application/Cherry.application(NOT tomcat !)
+- Be careful to stop the server to avoid address already in use
 Done !!
 
 ### Gradle (Creating a runnable jar then running it)
