@@ -2,27 +2,32 @@
 
 ## Installation
 
-### From sources
+### Eclipse [Download page](https://www.eclipse.org/downloads/)
 - install eclipse neon
-- go to help/markeplace & install Gradle tool suit + Spring too suit
+- go to help/markeplace & install Buildship Gradle + Spring IDE
+- go to Window/Perspective/Open Perspective/Other.../Spring then click OK
 - Open the server/ folder into eclipse
-- right click on project configuration/add gradle nature
-- right click on project run as/java application
+
+### Gradle
+- install gradle 3.4.1 : (Not by apt-get)
+	1. curl -s "https://get.sdkman.io" | bash
+	2. sudo apt install unzip
+	3. source "$HOME/.sdkman/bin/sdkman-init.sh"
+	4. sdk install gradle 3.4.1
+Done !
+
+## Usage 
+
+### Eclipse
+- right click on project run as/java application/Cherry.application(NOT tomcat)
+- Be careful to stop the server to avoid adress already in
 Done !!
 
-### From runnable jar
-- cd to server
-- java -jar cherry-rest-service-X.X.X.jar 
-Done :D
-
 ### Create a runnable Jar
-- install gradle 3.4.1 (-> sdkman for linux)
 - cd to server/
 - gradle clean
 - gradle build
 Done 
-
-## Usage 
 
 - Open your favorite web browser ( not Internet Explorer plz... )
 - type localhost:8080
