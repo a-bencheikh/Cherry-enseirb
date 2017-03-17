@@ -250,3 +250,54 @@ a.button {
   cursor: default !important;
   pointer-events: none;
 }
+
+.default-button {
+  background-color: #005cb9;
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+.default-button:hover {background-color: #005cff}
+
+.default-button:active {
+  background-color: #005cff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.danse-button {
+    background:url(/img/pixel-sitting.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:150px;
+    height:150px;
+}
+
+
+
+.danse-button:hover {box-shadow: 0 5px #666;}
+
+.danse-button:active {
+  background:url(/img/pixel-win.png) no-repeat;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.learn-button {
+    background:url(/img/pixel-computer.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:150px;
+    height:150px;
+}
+
+.learn-button:active {
+  background:url(/img/pixel-win.png) no-repeat;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.learn-button:hover {box-shadow: 0 5px #666;}
