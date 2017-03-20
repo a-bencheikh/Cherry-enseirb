@@ -1,0 +1,227 @@
+/* ============================================================
+HTML & BODY
+============================================================ */
+body {
+  background-color: white;
+  color: #005cb9;
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*$primary:    #005cb9;
+$secondary:  #f8d900;
+$danger:     #f53d3d;
+$light:      #8dcfd9;
+*/
+/* ============================================================
+TEXT LEVEL SEMANTICS
+============================================================ */
+a{
+  color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ============================================================
+IMAGES LAYER
+============================================================ */
+.poppy-intro{
+  background-image: url('../img/poppy-arms-open.png');
+  background-size: cover;
+  max-width: 300px;
+
+}
+/* ============================================================
+PRIMARY STRUCTURE
+============================================================ */
+
+.container {
+  margin: auto;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.flex-item{
+  flex: 1;
+  margin: auto;
+  width: 100%;
+  padding: 15px;
+}
+
+section:first-of-type{
+  margin-top: 70px;
+}
+section {
+  padding: 60px 0;
+}
+section h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+section p {
+  margin-bottom: 30px;
+}
+section p:last-child {
+  margin-bottom: 0;
+}
+section.color {
+  background-color: #8dcfd9;
+  color: white;
+}
+
+/* ============================================================
+NAV BAR
+============================================================ */
+header {
+  background: #005cb9;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  transition: top 0.2s ease-in-out;
+}
+
+.navbar-scroll{
+  top : -70px;
+  transition: top 0.25s ease-in-out;
+  box-shadow: none;
+}
+.navbar-over{
+  box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 4px;
+  transition: all 0.5s ease-in-out;
+
+}
+.logo {
+  font-weight: 800;
+  font-size: 36px;
+}
+
+nav{
+  padding: 0 10px;
+}
+
+nav ul {
+  float: right;
+}
+
+nav li {
+  margin-left: 50px;
+  display: inline-block;
+}
+nav a{
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  line-height: 40px;
+}
+nav a:hover{
+  color:#f8d900;
+}
+
+[type="checkbox"], label {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  label {
+    display: block;
+    background: #f8d900;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 2px;
+  }
+
+  label:after{
+    content:'';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 8px 5px;
+    box-shadow: 0px 10px 0px white, 0px 20px 0px white;
+    border-radius: 2px;
+
+  }
+
+  [type="checkbox"]:checked ~ ul {
+    background-color: #005cb9;
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    right: 15px;
+    margin-top: 15px;
+    width: 170px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 4px;
+    border-radius: 2px;
+  }
+
+  nav ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: left;
+    text-indent: 20px;
+    margin-left: 0px;
+  }
+}
+
+
+/* ============================================================
+MEDIA QUERIES
+============================================================ */
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .container {
+    width: 70%;
+  }
+}

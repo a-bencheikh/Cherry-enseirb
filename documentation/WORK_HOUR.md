@@ -4,5 +4,6 @@ Rob2b :
 - Starting to look at the server 2h -> done
 - Finding how to compile server src -> 10h done
 - Writing installation doc -> 2h
+- Installation party first goal 17/03 4h
 
 
