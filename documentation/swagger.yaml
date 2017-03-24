@@ -7,8 +7,6 @@ info:
 host: "127.0.0.1:8080"
 schemes:
 - "http"
-produces:
-- "application/json"
 paths:
   /test/behave:
     get:
