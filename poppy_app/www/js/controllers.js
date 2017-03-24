@@ -20,12 +20,15 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   //$scope.chat = Chats.get($stateParams.chatId);
 })
-
+// Controller for the Json Requet
 .controller('AccountCtrl', function($scope, $http) {
   $scope.settings = {
     enableFriends: true
   };
+  $http.get('data/UrlMoves.json').success(function (data) {
+    $scope.primitives = data.url;
+  })
   $scope.getUrl = function() {
-    $http.get('http://localhost:8080/test/behave?name=swap_behave');
+  $http.get("http://localhost:8080/test/behave?name=" + $scope.test);
   };
 });
