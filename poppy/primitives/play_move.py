@@ -17,7 +17,7 @@ class PlayMove(pypot.primitive.Primitive):
 	def __init__(self, robot, movement = None):
 		
 			pypot.primitive.Primitive.__init__(self, robot)
-			self._movement  =None
+			self._movement  = None
 			self._robot = robot
 
 	#def start(self, text):

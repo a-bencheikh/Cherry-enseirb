@@ -19,6 +19,3 @@ Mobile app written in JavaScript (NodeJS, Cordova, Angular2 & Ionic2)
 2. ionic serve
 Done !
 3. Ctrl+C to stop
-
-
-
