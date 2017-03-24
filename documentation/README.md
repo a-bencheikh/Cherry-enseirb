@@ -2,7 +2,7 @@
 This is a swagger JSON built by the [swagger-codegen](https://github.com/swagger-api/swagger-codegen) project.
 
 ## View the yaml file 
-- https://app.swaggerhub.com/api/mlollo/Controller/1.0.0
+- https://app.swaggerhub.com/api/mlollo/Request-Poppy-Primitive/1.0.1
 ## Step Swaggerhub
 1. https://app.swaggerhub.com
 2. Sign in with github
