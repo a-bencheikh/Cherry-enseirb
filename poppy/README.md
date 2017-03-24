@@ -57,7 +57,7 @@ $ sudo python
 
 Lancer le serveur avec java -jar cherry-...
 
->>> requests.get("http://127.0.0.1:8080/setup?kevin")
+>>> requests.get("http://127.0.0.1:8080/setup?id=kevin")
 
 On peut alors faire une requête au robot poppy directement comme obtenir toutes les primitives :
 > http://localhost:8000/primitive/list.json
