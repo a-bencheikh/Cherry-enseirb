@@ -1,0 +1,30 @@
+<ion-view view-title="Account">
+
+    <!--Nav Buttons left-->
+    <ion-nav-buttons side="left">
+        <button class="button button-small button-icon icon ion-ios-home" onclick="window.location.href='#/home'"></button>
+    </ion-nav-buttons>
+
+    <!--Nav Buttons right-->
+    <ion-nav-buttons side="secondary">
+        <button class="button button-small button-icon icon ion-information-circled" ng-click="showAlert()"></button>
+        <button class="button button-small button-icon icon ion-ios-gear" onclick="window.location.href='#/account'"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-list>
+            <ion-toggle  ng-model="settings.enableFriends">
+                Enable Friends
+            </ion-toggle>
+
+            <ion-item ng-repeat="item in list">
+                {{item.title}}
+            </ion-item>
+
+        </ion-list>
+
+        <button class="button button-block button-positive" ng-click="loginModal.show()">Se connecter</button>
+
+
+    </ion-content>
+</ion-view>

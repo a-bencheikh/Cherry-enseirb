@@ -1,0 +1,45 @@
+/* Empty. Add your own CSS if you like */
+.weather-home {
+    background-image: url('../img/background/sphere3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    flex: 1;
+    flex-direction: column;
+}
+.overlay {
+    padding-top: 5px;
+    background-color: #000000;
+    opacity: 0.5;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast {
+    align-items: center;
+    flex-direction: column;
+}
+
+.bigText {
+    flex: 2;
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    color: #FFFFFF;
+}
+
+.mainText {
+    flex: 1;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.ion-ios-gear{
+  color:  #444 !important;
+}
+.input-label {
+  color: #ffffff;
+}
+
+input[type="text"] {
+    color: #FFFFFF;
+}
