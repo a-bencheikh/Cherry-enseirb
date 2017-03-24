@@ -7,36 +7,16 @@ info:
 host: "127.0.0.1:8080"
 schemes:
 - "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
 paths:
-  /test/behave:
-    get:
-      tags:
-      - "Primitive Behave"
-      summary: "Messages"
-      description: "swap_behave\n"
-      parameters:
-      - name: "name"
-        in: "query"
-        description: "Behave Primitive"
-        required: true
-        type: "string"
-        format: "uuid"
-      responses:
-        200:
-          description: "Poppy Behave"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Info"
-        default:
-          description: "Unexpected error"
-          schema:
-            $ref: "#/definitions/Error"
   /chatterbot:
     get:
       tags:
       - "Chatterbot"
-      summary: "Messages"
+      summary: "Chatterbot Controller"
       description: "Chatterbot\n"
       parameters:
       - name: "msg"
@@ -59,16 +39,10 @@ paths:
   /table/scan:
     get:
       tags:
-      - "AWSTable"
-      summary: "Scan of tables"
+      - "AWS Table"
+      summary: "CRM Handlers"
       description: "AWS Table Management\n"
-      parameters:
-      - name: "adress"
-        in: "query"
-        description: "AWS Table Management"
-        required: false
-        type: "string"
-        format: "uuid"
+      parameters: []
       responses:
         200:
           description: "Scan successful"
@@ -83,14 +57,14 @@ paths:
   /multi/set:
     get:
       tags:
-      - "Multiplication"
-      summary: "Multiplication"
+      - "Multiplication Controller"
+      summary: "CRM Handlers"
       description: "Multiplication set the equation"
       parameters:
       - name: "param"
         in: "query"
         description: "Number for Mutiplication (table of 8)"
-        required: false
+        required: true
         type: "string"
         format: "uuid"
       responses:
@@ -107,14 +81,14 @@ paths:
   /multi/answer:
     get:
       tags:
-      - "Multiplication"
-      summary: "Multiplication"
+      - "Multiplication Controller"
+      summary: "CRM Handlers"
       description: "Multiplication answer of the child"
       parameters:
       - name: "param"
         in: "query"
         description: "Number for Mutiplication (table of 8)"
-        required: false
+        required: true
         type: "string"
         format: "uuid"
       responses:
@@ -131,9 +105,9 @@ paths:
   /multi/right_answer:
     get:
       tags:
-      - "Multiplication"
-      summary: "Multiplication"
-      description: "Multiplication answer of the child"
+      - "Multiplication Controller"
+      summary: "CRM Handlers"
+      description: "response (param pas pris en compte)"
       parameters:
       - name: "param"
         in: "query"
@@ -155,9 +129,9 @@ paths:
   /multi/false_answer:
     get:
       tags:
-      - "Multiplication"
-      summary: "Multiplication"
-      description: "Multiplication answer of the child"
+      - "Multiplication Controller"
+      summary: "CRM Handlers"
+      description: "response (param pas pris en compte)"
       parameters:
       - name: "param"
         in: "query"
@@ -179,9 +153,9 @@ paths:
   /multi/learn_all_multiplications:
     get:
       tags:
-      - "Multiplication"
-      summary: "Multiplication"
-      description: "Multiplication answer of the child"
+      - "Multiplication Controller"
+      summary: "CRM Handlers"
+      description: "response (param pas pris en compte)"
       parameters:
       - name: "param"
         in: "query"
@@ -192,6 +166,521 @@ paths:
       responses:
         200:
           description: "Play multiplication"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /users/define:
+    get:
+      tags:
+      - "Users Controller"
+      summary: "CRM Handlers"
+      description: "Define a user"
+      parameters:
+      - name: "adress"
+        in: "query"
+        description: "name of user"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "User define fine"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /:
+    post:
+      tags:
+      - "Game Handler"
+      summary: "Game Handler"
+      description: "Game {jsonreader}\n"
+      consumes:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Game Unity"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /settings:
+    post:
+      tags:
+      - "Game Handler"
+      summary: "Game Handler"
+      description: "Game {parameter}\n"
+      consumes:
+      - "parameter"
+      parameters: []
+      responses:
+        200:
+          description: "Game Unity Settings"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /settings/reset_audio:
+    get:
+      tags:
+      - "Game Handler"
+      summary: "Game Reset Audio"
+      description: "Game\n"
+      parameters: []
+      responses:
+        200:
+          description: "Game Unity Reset Audio"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /onclick/generic:
+    get:
+      tags:
+      - "Onclick"
+      summary: "Onclick Handler"
+      description: "Onclick"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "value=yes/no/dontknw/maybe/joker/dac"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Onclick response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /onclick/dialog:
+    get:
+      tags:
+      - "Onclick"
+      summary: "Onclick Handler"
+      description: "presentation de cherry -> bonjour je m'appel cherry"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "value=step1/"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Onclick response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/hello:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Bonjour, je suis reveiller"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/wait:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Waiting state"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/wait_behave:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Je joue un wait au hasard"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/wait_behave_manuel:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Listening state manuel"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/listen:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Listening state"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/listen_start:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Listening restart"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robot/listen_stop:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Listener Controller"
+      description: "Listening stop"
+      parameters:
+      - name: "state"
+        in: "query"
+        description: "on/off"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /presentation:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Presentation Controller"
+      description: "Presentation du robot"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "sogeti/cherry/prima/bonjour/aurevoir"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /stop:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Presentation Controller"
+      description: "Presentation du robot stop"
+      parameters:
+      - name: "presentation"
+        in: "query"
+        description: "false"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /speakfinished:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Robot Controller"
+      description: "Pas encore définie"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "false"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /behavefinished:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Robot Controller"
+      description: "Pas encore définie"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "false"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /setup:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Setup Controller"
+      description: "Setup le robot"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "robot name"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /robots:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Setup Controller"
+      description: "Renvoi la liste des robots en json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "robot name"
+        required: false
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Response"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /test:
+    post:
+      tags:
+      - "Primitive"
+      summary: "Test Controller"
+      description: "Primitive Behave\n"
+      consumes:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Poppy Behave"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /test/behave:
+    get:
+      tags:
+      - "Primitive"
+      summary: "Test Controller"
+      description: "Primitive Behave\n"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "- eye_happy_behave \n- test_gtts\n- question_behave\n- point_arm_left_behave\n\
+          - speak\n- little_arms_up_behave\n- upper_body_idle_motion\n- show_right_rest_behave\n\
+          - left_arm_up_behave\n- play_movement\n- open_arms_behave\n- show_left_up_behave\n\
+          - listen\n- swap_behave\n- eye_angry_behave\n- say_text\n- point_arm_left_old_behave\n\
+          - hunkers_behave\n- show_right_up_behave\n- look_left_behave\n- show_left_behave\n\
+          - torso_idle_motion\n- point_arms_behave\n- head_idle_motion\n- look_right_behave\n\
+          - double_me_behave\n- point_arm_right_behave\n- rest_open_behave\n- show_right_behave\n\
+          - eye_behave\n"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        200:
+          description: "Poppy Behave"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Info"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /test/speak:
+    post:
+      tags:
+      - "Primitive"
+      summary: "Test Controller"
+      description: "Primitive Behave\n"
+      consumes:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Poppy Behave"
           schema:
             type: "array"
             items:
