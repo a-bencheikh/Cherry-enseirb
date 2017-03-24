@@ -41,6 +41,31 @@ $ sudo python
 >>> threading.Thread(target=lambda: server.run()).start()
 ```
 
+
+## Usage avec le server
+
+1. cd poppy/
+```
+$ sudo python
+>>> import threading
+>>> import requests
+>>> from cherry import Cherry
+>>> from pypot.server.httpserver import HTTPRobotServer
+
+>>> robot = Cherry.setup('config.json')
+>>> Cherry.serve(robot, '127.0.0.1')
+
+Lancer le serveur avec java -jar cherry-...
+
+>>> requests.get("http://127.0.0.1:8080/setup?kevin")
+
+On peut alors faire une requête au robot poppy directement comme obtenir toutes les primitives :
+> http://localhost:8000/primitive/list.json
+
+La requête pour lancer ces primitives du serveur :
+> http://127.0.0.1:8080/test/behave?name=<primitive>
+```
+
 ### WORK IN PROGRESS ....
 
 ## API [source](https://github.com/poppy-project/pypot/blob/master/REST-APIs.md)
