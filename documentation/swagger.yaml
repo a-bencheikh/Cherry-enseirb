@@ -4,12 +4,9 @@ info:
   description: "Traduction commandes GET vers les PrimitivesWS du Robot Poppy"
   version: "1.0.1"
   title: "Controller Poppy API"
-host: "localhost:8080"
-basePath: "/"
+host: "127.0.0.1:8080"
 schemes:
 - "http"
-consumes:
-- "application/json"
 produces:
 - "application/json"
 paths:
